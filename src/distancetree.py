@@ -22,7 +22,7 @@ class Tree:
             left = repr(self.left).splitlines()
             s += "" + head(left) + "\n"
             for line in tail(left):
-                s += "│"  + (" " + int(self.dleft) + " ")
+                s += "│"  + (" " * int(self.dleft))
                 s += line + "\n"
         if self.right:
             right = repr(self.right).splitlines()
