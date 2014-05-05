@@ -26,7 +26,11 @@ Takes a distance matrix and a list of names and returns a tree
 ## Properties
 
 * The order in which the distances are given in the matrix will not affect the shape of the tree that is returned. (*tested*)
-* If the input is well formed, summing the distances from two leaves to the nearest connecting node will give the same distance as the distance between those leaves in the original distance matrix.
+* If the input is well formed, summing the distances from two leaves to the nearest connecting node will give the same distance as the distance between those leaves in the original distance matrix. (*not tested yet*)
+
+## Testing
+
+**python -m unittest discover test**
 
 ## Running Time
 
