@@ -36,11 +36,12 @@ class TestNeighborJoining(unittest.TestCase):
                   ,[8,11, 8, 9, 8, 0]]
         leaves = ['a', 'b', 'c', 'd', 'e', 'f']
         testcases.append(TestCase(dmatrix, leaves))
-        newids = range(6)
-        shuffle(newids)
-        leaves  = sortby(newids)(leaves)
-        dmatrix = sortby(newids)(map(sortby(newids), dmatrix))
-        testcases.append(TestCase(dmatrix, leaves))
+        for i in range(100):
+            newids = range(6)
+            shuffle(newids)
+            leaves  = sortby(newids)(leaves)
+            dmatrix = sortby(newids)(map(sortby(newids), dmatrix))
+            testcases.append(TestCase(dmatrix, leaves))
         results = [numpy_nj.neighborJoin(t.D, t.forest) for t in testcases]
         return 
 
